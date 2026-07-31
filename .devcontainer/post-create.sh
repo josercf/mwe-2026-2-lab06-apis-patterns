@@ -6,6 +6,8 @@ echo "==> Configurando o laboratorio mwe-2026-2-lab06-apis-patterns"
 
 # --- Dependencias da stack -------------------------------------------------
 if [ -f requirements.txt ]; then pip install --user -r requirements.txt; fi
+if [ -f servicos/frete/requirements.txt ]; then pip install --user -r servicos/frete/requirements.txt; fi
+if [ -f servicos/notificacoes/package.json ]; then (cd servicos/notificacoes && npm ci); fi
 
 # --- Ollama: SLM rodando dentro do proprio container -----------------------
 # Backend único de IA dos laboratórios, decisão registrada na ADR-005 do
